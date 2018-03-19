@@ -1,7 +1,25 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: jan
- * Date: 19.03.18
- * Time: 10:42
- */
+<footer>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-auto mr-auto">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="/impressum">Impressum</a></li>
+                </ul>
+            </div>
+            <div class="col-auto">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://github.com/jchristlieb"><i class="fab fa-github-square fa-2x"></i>
+
+                        </a></li>
+                    <li class="list-inline-item"><a href="https://twitter.com/jchristlieb"><i class="fab fa-twitter-square fa-2x"></i>
+
+                        </a></li>
+                    <li class="list-inline-item"><a href="https://www.xing.com/profile/Jan_Christlieb/cv"><i class="fab fa-xing-square fa-2x"></i>
+
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
