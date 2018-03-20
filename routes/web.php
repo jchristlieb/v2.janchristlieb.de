@@ -11,4 +11,11 @@
 |
 */
 
+
+// start
 Route::get('/', 'IndexController@index');
+
+// project
+Route::get('/projects', 'ProjectController@index');
+Route::post('/projects', 'ProjectController@index');
+Route::get('/projects/{slug}', 'ProjectController@single');

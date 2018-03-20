@@ -26,7 +26,9 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Tags created');
 
         // seed project_tag relationship table
-
-        // each project has many tags (rand 1 to 4)
+        $projects->each(function ($project) use ($tags) {
+           $project->tags()->saveMany($tags->random(rand(2,4)));
+        });
+        $this->command->info('Tags linked to Projects');
     }
 }

@@ -11,8 +11,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
-            <main>
+        <div class="col-md-4">
+            <aside>
+                @yield('sidebar')
+            </aside>
+        </div>
+        <div class="col-md-8">
+            <main class="">
                 @yield('content')
             </main>
         </div>

@@ -4,15 +4,20 @@
 @include('snippets.head')
 
 <body>
+<div class="container-fluid bg__project--single">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                @include('snippets.navigation')
+                @yield('screenshot')
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col">
-            @include('snippets.navigation')
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <main>
+            <main class="">
                 @yield('content')
             </main>
         </div>

@@ -9994,6 +9994,69 @@ a.text-dark:focus {
   }
 }
 
+.fake-browser-ui {
+  padding: 20px 0 0;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.125);
+  display: inline-block;
+  position: relative;
+  line-height: 0;
+}
+
+.fake-browser-ui .frame {
+  display: block;
+  height: 15px;
+  position: absolute;
+  top: 5px;
+  left: 1px;
+}
+
+.fake-browser-ui span {
+  height: 8px;
+  width: 8px;
+  border-radius: 8px;
+  background-color: #eee;
+  border: 1px solid #dadada;
+  float: left;
+  margin: 0 0 0 4px;
+}
+
+.fake-browser-ui .bt-1 {
+  background-color: #ED594A;
+}
+
+.fake-browser-ui .bt-2 {
+  background-color: #FDD800;
+}
+
+.fake-browser-ui .bt-3 {
+  background-color: #5AC05A;
+}
+
+.section_project .card {
+  border: 1px solid #adadad;
+  -webkit-box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+}
+
+.section_project .card-img-top {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.section_project .card-body {
+  border: none;
+}
+
+.section_project .card-footer {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.bg__project--single {
+  background-color: #0c5460;
+}
+
 /*!
  * Font Awesome Pro 5.0.6 by @fontawesome - http://fontawesome.com
  * License - http://fontawesome.com/license (Commercial License)
@@ -14235,11 +14298,5 @@ readers do not read off random characters that represent icons */
 
 .fab {
   font-family: 'Font Awesome 5 Brands';
-}
-
-.navbar-laravel {
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 

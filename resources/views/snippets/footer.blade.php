@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-auto mr-auto">
                 <ul class="list-inline">
-                    <li class="list-inline-item"><a href="/impressum">Impressum</a></li>
+                    <li class="list-inline-item"><a href="/impressum">Legal notice</a></li>
                 </ul>
             </div>
             <div class="col-auto">

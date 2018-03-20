@@ -1,17 +1,17 @@
-
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Variables
+// dependencies for the sass files
 @import "variables";
+@import '~bootstrap/scss/bootstrap';
+
+
+// saas files
+@import "1-general/1-typography";
+@import "1-general/2-global";
+@import "1-general/3-buttons";
+@import "1-general/4-images";
+@import "2-sections/1-project";
 
 // Vendors
-@import '~bootstrap/scss/bootstrap';
 @import '../fontawesome-5/scss/fontawesome';
 @import "../fontawesome-5/scss/fa-brands";
 
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
