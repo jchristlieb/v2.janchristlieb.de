@@ -1,0 +1,26 @@
+.section_project {
+
+  .card {
+    border: 1px solid #adadad;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  }
+
+  .card-img-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .card-body {
+    border: none;
+  }
+
+  .card-footer {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.125);
+  }
+
+}
+
+.bg__project--single {
+  background-color: #0c5460;
+}
