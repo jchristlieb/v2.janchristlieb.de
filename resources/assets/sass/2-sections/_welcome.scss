@@ -1,26 +1,12 @@
-.section_project {
+.section_welcome {
 
-  .card {
-    border: 1px solid #adadad;
-    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  .hr-intro {
+    width: 175px;
   }
 
-  .card-img-top {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  .jumbotron {
+    padding: 3rem;
+    background-color: $main-col-darker;
   }
 
-  .card-body {
-    border: none;
-  }
-
-  .card-footer {
-    border: none;
-    background-color: rgba(0, 0, 0, 0.125);
-  }
-
-}
-
-.bg__project--single {
-  background-color: #0c5460;
 }

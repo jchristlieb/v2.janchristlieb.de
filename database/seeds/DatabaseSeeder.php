@@ -11,6 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //create user
+        $user = factory(\App\User::class)->create([
+            'name' => 'JanChristlieb',
+            'email' => 'mail@janchristlieb.de',
+            'password' => bcrypt('secret'),
+        ]);
+        $this->command->info('User generated');
+
         // create projects
         $projects = factory(\App\Project::class, 7)->create();
         $this->command->info('Projects created');

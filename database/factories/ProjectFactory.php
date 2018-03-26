@@ -3,16 +3,15 @@
 use Faker\Generator as Faker;
 
 $factory->define(\App\Project::class, function (Faker $faker) {
-    $title = $faker->words(rand(4,7), true);
-    $years = [2016, 2017, 2018];
+    $Name = $faker->words(rand(1,2), true);
     return [
-        'date' => $years[rand(0,2)],
+        'name' => $Name,
+        'slug' => str_slug($Name),
+        'title' => $faker->words(rand(2,5), true),
+        'description' => $faker->paragraphs(rand(2,5), true),
+        'date' => $faker->date('Y-m-d','now'),
         'client' => $faker->company,
         'repository' => $faker->url,
         'link' => $faker->url,
-        'title' => $title,
-        'slug' => str_slug($title),
-        'description' => $faker->paragraphs(rand(1,3), true),
-        'image_id' => 1,
     ];
 });

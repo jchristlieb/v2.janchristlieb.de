@@ -78,7 +78,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #f5f8fa;
+  background-color: #fff;
 }
 
 [tabindex="-1"]:focus {
@@ -520,7 +520,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #f5f8fa;
+  background-color: #fff;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -1950,7 +1950,7 @@ pre code {
 }
 
 .table .table {
-  background-color: #f5f8fa;
+  background-color: #fff;
 }
 
 .table-sm th,
@@ -2116,7 +2116,7 @@ pre code {
 }
 
 .table .thead-dark th {
-  color: #f5f8fa;
+  color: #fff;
   background-color: #212529;
   border-color: #32383e;
 }
@@ -2128,7 +2128,7 @@ pre code {
 }
 
 .table-dark {
-  color: #f5f8fa;
+  color: #fff;
   background-color: #212529;
 }
 
@@ -2535,8 +2535,8 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .was-validated .custom-control-input:valid:focus ~ .custom-control-label::before,
 .custom-control-input.is-valid:focus ~ .custom-control-label::before {
-  -webkit-box-shadow: 0 0 0 1px #f5f8fa, 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
-          box-shadow: 0 0 0 1px #f5f8fa, 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+  -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+          box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }
 
 .was-validated .custom-file-input:valid ~ .custom-file-label,
@@ -2652,8 +2652,8 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .was-validated .custom-control-input:invalid:focus ~ .custom-control-label::before,
 .custom-control-input.is-invalid:focus ~ .custom-control-label::before {
-  -webkit-box-shadow: 0 0 0 1px #f5f8fa, 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-          box-shadow: 0 0 0 1px #f5f8fa, 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+  -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+          box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
 .was-validated .custom-file-input:invalid ~ .custom-file-label,
@@ -4063,8 +4063,8 @@ tbody.collapse.show {
 }
 
 .custom-control-input:focus ~ .custom-control-label::before {
-  -webkit-box-shadow: 0 0 0 1px #f5f8fa, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-          box-shadow: 0 0 0 1px #f5f8fa, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+          box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-control-input:active ~ .custom-control-label::before {
@@ -4332,8 +4332,8 @@ tbody.collapse.show {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #f5f8fa;
-  border-color: #dee2e6 #dee2e6 #f5f8fa;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
 }
 
 .nav-tabs .dropdown-menu {
@@ -5434,7 +5434,8 @@ tbody.collapse.show {
   background-color: #1d2124;
 }
 
-.jumbotron {
+.jumbotron,
+.intro {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
   background-color: #e9ecef;
@@ -5442,7 +5443,8 @@ tbody.collapse.show {
 }
 
 @media (min-width: 576px) {
-  .jumbotron {
+  .jumbotron,
+  .intro {
     padding: 4rem 2rem;
   }
 }
@@ -9994,6 +9996,34 @@ a.text-dark:focus {
   }
 }
 
+body {
+  background-color: #52738A;
+}
+
+@media screen and (max-width: 859px) {
+  body {
+    background-color: #ffffff;
+  }
+}
+
+.bg__main-col {
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 800px !important;
+}
+
+.intro {
+  background-color: #f7f7f7;
+  width: 800px;
+  padding: 1.7rem;
+}
+
+.dropdown-menu {
+  min-width: 0;
+}
+
 .fake-browser-ui {
   padding: 20px 0 0;
   border-radius: 3px;
@@ -10033,6 +10063,16 @@ a.text-dark:focus {
   background-color: #5AC05A;
 }
 
+.img-intro {
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #52738A;
+}
+
+.project-image img {
+  max-width: 100%;
+}
+
 .section_project .card {
   border: 1px solid #adadad;
   -webkit-box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
@@ -10053,8 +10093,14 @@ a.text-dark:focus {
   background-color: rgba(0, 0, 0, 0.125);
 }
 
-.bg__project--single {
-  background-color: #0c5460;
+.section_welcome .hr-intro {
+  width: 175px;
+}
+
+.section_welcome .jumbotron,
+.section_welcome .intro {
+  padding: 3rem;
+  background-color: #f7f7f7;
 }
 
 /*!
@@ -14298,5 +14344,23 @@ readers do not read off random characters that represent icons */
 
 .fab {
   font-family: 'Font Awesome 5 Brands';
+}
+
+/*!
+ * Font Awesome Pro 5.0.6 by @fontawesome - http://fontawesome.com
+ * License - http://fontawesome.com/license (Commercial License)
+ */
+
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: url(/fonts/fa-light-300.eot?d04e7c7a32ec3df6ee6cad38f99e4f2c);
+  src: url(/fonts/fa-light-300.eot?d04e7c7a32ec3df6ee6cad38f99e4f2c) format("embedded-opentype"), url(/fonts/fa-light-300.woff2?7cc3813fd8210dc22ed2cc16891d0c6d) format("woff2"), url(/fonts/fa-light-300.woff?563925f7d15a0f5ab8d6b764b5b4645e) format("woff"), url(/fonts/fa-light-300.ttf?c183e1e55f4776c764b0349b484dca03) format("truetype"), url(/fonts/fa-light-300.svg?3b91afa2af4e700731a28a552bc0cb16) format("svg");
+}
+
+.fal {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
 }
 

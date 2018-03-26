@@ -1,0 +1,29 @@
+body {
+  background-color: $body-col;
+}
+
+@media screen and (max-width: 859px) {
+  body {
+    background-color: $main-col;
+  }
+}
+
+.bg__main-col {
+  background-color: $main-col;
+}
+
+.container {
+  max-width: 800px !important;
+}
+
+.intro {
+  @extend .jumbotron;
+  background-color: $main-col-darker;
+  width: 800px;
+  padding: 1.7rem;
+}
+
+// make user menu in line with master layout
+.dropdown-menu {
+  min-width: 0;
+}

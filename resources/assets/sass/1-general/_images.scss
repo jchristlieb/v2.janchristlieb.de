@@ -36,3 +36,14 @@
 .fake-browser-ui .bt-3 {
   background-color: #5AC05A;
 }
+
+
+.img-intro {
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid $body-col;
+}
+
+.project-image img {
+  max-width: 100%;
+}

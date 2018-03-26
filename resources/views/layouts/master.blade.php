@@ -3,28 +3,26 @@
 
 @include('snippets.head')
 
-<body>
-<div class="container">
+<body class="mt-md-4 mb-md-4">
+
+<div class="container bg__main-col rounded">
+
     <div class="row">
         <div class="col">
             @include('snippets.navigation')
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <main>
-                @yield('content')
-            </main>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            @include('snippets.footer')
-        </div>
-    </div>
 
-    @yield('scripts')
+
+    @yield('intro')
+
+    @yield('content')
+
+    @include('snippets.footer')
+
 </div>
+
+@yield('scripts')
 
 </body>
 

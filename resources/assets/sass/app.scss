@@ -4,14 +4,16 @@
 
 
 // saas files
-@import "1-general/1-typography";
-@import "1-general/2-global";
-@import "1-general/3-buttons";
-@import "1-general/4-images";
-@import "2-sections/1-project";
+@import "1-general/fonts";
+@import "1-general/global";
+@import "1-general/buttons";
+@import "1-general/images";
+@import "2-sections/project";
+@import "2-sections/welcome";
 
 // Vendors
 @import '../fontawesome-5/scss/fontawesome';
 @import "../fontawesome-5/scss/fa-brands";
+@import "../fontawesome-5/scss/fa-light";
 
 
