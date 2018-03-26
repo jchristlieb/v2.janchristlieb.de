@@ -20,7 +20,30 @@
                     <span class="bt-2"></span>
                     <span class="bt-3"></span>
                 </div>
-                <img class="card-img-top" src="../images/landscape.jpg" alt="Card image cap">
+
+
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+
+                        @foreach($images as $image)
+
+                            <div class="project-image carousel-item active">
+                                <img class="d-block w-100" src="{{ $image->getUrl() }}" alt="First slide">
+                            </div>
+
+                        @endforeach
+
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
             </div>
         </div>
         <div class="col-12">
@@ -46,5 +69,18 @@
             </div>
         </div>
     </div>
+
+@endsection
+
+@section('scripts')
+
+    <script src="/public/js/app.js"></script>
+
+    <script>
+
+        $('.carousel').carousel()
+
+    </script>
+
 
 @endsection

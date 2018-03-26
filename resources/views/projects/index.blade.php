@@ -28,7 +28,7 @@
                                     <span class="bt-3"></span>
                                 </div>
                                 <div class="project-image">
-                                    {{$project->getFirstMedia()}}
+                                    {{ $project->getFirstMedia()}}
                                 </div>
                             </div>
                             <div class="card-body">

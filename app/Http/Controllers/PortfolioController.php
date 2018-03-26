@@ -26,8 +26,9 @@ class PortfolioController extends Controller
     public function single($slug)
     {
         $project = Project::where('slug', $slug)->first();
+        $images = $project->getMedia($project->slug);
 
-        return view('projects.single', compact('project'));
+        return view('projects.single', compact('project', 'images'));
     }
 
 

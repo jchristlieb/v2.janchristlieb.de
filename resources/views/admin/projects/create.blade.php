@@ -7,11 +7,6 @@
 
         {{ csrf_field() }}
 
-
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Select Image</label>
-            <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
-        </div>
         <div class="form-group">
             <label>Project Name</label>
             <input name="name" type="text" class="form-control" required>
@@ -40,7 +35,33 @@
             <label>GitHub Repository</label>
             <input name="repository" type="text" class="form-control">
         </div>
+
+        <hr>
+
+        <div class="row">
+
+            <div class="form-group col-sm-6">
+                <label for="exampleFormControlFile1">Select Image</label>
+                <input type="file" name="image-1" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="exampleFormControlFile1">Select 2nd Image (optional)</label>
+                <input type="file" name="image-2" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="exampleFormControlFile1">Select 3rd Image (optional)</label>
+                <input type="file" name="image-3" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="exampleFormControlFile1">Select 4th Image (optional)</label>
+                <input type="file" name="image-4" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+
+        </div>
+
         <button type="submit" class="btn btn-primary">Save new project</button>
+
+
     </form>
 
 @endsection

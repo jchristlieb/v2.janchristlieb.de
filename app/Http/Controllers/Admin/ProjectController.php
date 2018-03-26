@@ -35,7 +35,7 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store()
@@ -43,7 +43,6 @@ class ProjectController extends Controller
         // validate requested data
 
         $validatedData = $this->validate(request(), [
-            'image' => 'required|image',
             'name' => 'required',
             'title' => 'required',
             'description' => 'required',
@@ -52,18 +51,52 @@ class ProjectController extends Controller
             'link' => 'required|url',
             'repository' => 'nullable|url',
         ]);
-        unset($validatedData['image']);
+
+        $this->validate(request(), [
+            'image-1' => 'required|image',
+            'image-2' => 'nullable|image',
+            'image-3' => 'nullable|image',
+            'image-4' => 'nullable|image',
+        ]);
+
         // create a new project using the request data
 
         $project = Project::create($validatedData);
 
+        // associate images to the project
+
         $project
-            ->addMediaFromRequest('image')
-            ->setFileName($project->slug)
+            ->addMediaFromRequest('image-1')
+//            ->setFileName($project->slug)
             ->withAttributes(['alt' => $project->title, 'title' => $project->name])
             ->withResponsiveImages()
-            ->toMediaCollection();
+            ->toMediaCollection($project->slug);
 
+        if (is_uploaded_file('image-2')) {
+            $project
+                ->addMediaFromRequest('image-2')
+//            ->setFileName($project->slug)
+                ->withAttributes(['alt' => $project->title, 'title' => $project->name])
+                ->withResponsiveImages()
+                ->toMediaCollection($project->slug);
+        }
+        if (is_uploaded_file('image-3')) {
+            $project
+                ->addMediaFromRequest('image-3')
+//            ->setFileName($project->slug)
+                ->withAttributes(['alt' => $project->title, 'title' => $project->name])
+                ->withResponsiveImages()
+                ->toMediaCollection($project->slug);
+        }
+
+        if (is_uploaded_file('image-4')) {
+            $project
+                ->addMediaFromRequest('image-4')
+//            ->setFileName($project->slug)
+                ->withAttributes(['alt' => $project->title, 'title' => $project->name])
+                ->withResponsiveImages()
+                ->toMediaCollection($project->slug);
+        }
 
         // redirect to the dashboard
 
@@ -73,7 +106,7 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -84,7 +117,7 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -98,15 +131,15 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         // validate the request
 
-        $validatedData = $request->validate( [
+        $validatedData = $request->validate([
             'name' => 'required',
             'title' => 'required',
             'description' => 'required',
@@ -131,7 +164,7 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
