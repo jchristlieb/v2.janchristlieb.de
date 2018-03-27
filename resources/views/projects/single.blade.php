@@ -13,25 +13,33 @@
 @section('content')
 
     <div class="row section_project">
-        <div class="col-12">
-            <div class="m-4 fake-browser-ui">
-                <div class="frame">
-                    <span class="bt-1"></span>
-                    <span class="bt-2"></span>
-                    <span class="bt-3"></span>
-                </div>
-
-
+        <div class="m-4">
+            <div class="col-12">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
 
+
+                        <?php $i = 1 ?>
+
                         @foreach($images as $image)
 
-                            <div class="project-image carousel-item active">
-                                <img class="d-block w-100" src="{{ $image->getUrl() }}" alt="First slide">
+
+                            <div class="carousel-item<?php if ($i === 1) echo ' active' ?>">
+                                <div class="fake-browser-ui">
+                                    <div class="frame">
+                                        <span class="bt-1"></span>
+                                        <span class="bt-2"></span>
+                                        <span class="bt-3"></span>
+                                    </div>
+                                    <img class="d-block w-100" src="{{ $image->getUrl() }}" alt="First slide">
+                                </div>
                             </div>
 
+
+                            <?php $i++ ?>
+
                         @endforeach
+
 
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -74,7 +82,7 @@
 
 @section('scripts')
 
-    <script src="/public/js/app.js"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 
     <script>
 

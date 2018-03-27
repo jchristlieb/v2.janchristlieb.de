@@ -15,8 +15,6 @@
         </thead>
         <tbody>
 
-
-
         @foreach($projects as $project)
 
             <tr>
@@ -31,7 +29,6 @@
                     </form>
                 </td>
             </tr>
-
 
         @endforeach
 
