@@ -35,7 +35,14 @@
             <label>GitHub Repository</label>
             <input name="repository" type="text" class="form-control">
         </div>
-
+        <div class="form-group">
+            <label for="exampleFormControlSelect2">Select tags</label>
+            <select multiple class="form-control" name="tags[]">
+                @foreach($tags as $tag)
+                    <option>{{ $tag }}</option>
+                    @endforeach
+            </select>
+        </div>
         <hr>
 
         <div class="row">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Project;
@@ -28,8 +29,11 @@ class ProjectController extends Controller
      */
     public function create()
     {
+        // query name and id of each tag
+        $tags = Tag::pluck('name', 'id');
+
         // show form to create new project
-        return view('admin.projects.create');
+        return view('admin.projects.create', compact('tags'));
     }
 
     /**
@@ -38,7 +42,7 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
         // validate requested data
 
@@ -62,6 +66,13 @@ class ProjectController extends Controller
         // create a new project using the request data
 
         $project = Project::create($validatedData);
+
+        // retrieve the selected tags ID
+        $tags = $request->input('tags');
+        dd($tags);
+
+        // link the $tags to the $project
+        $project->tags()->attach($tags);
 
         // associate images to the project
 
