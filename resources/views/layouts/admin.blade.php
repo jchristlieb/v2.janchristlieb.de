@@ -32,8 +32,12 @@
                             <i class="fal fa-list-alt pr-2"></i>Manage projects</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link pl-0" href="/admin/tags/create">
+                            <i class="fal fa-tag pr-2"></i>Add tag</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link pl-0" href="/admin/tags">
-                            <i class="fal fa-tags pr-2"></i>Tags</a>
+                            <i class="fal fa-tags pr-2"></i>Manage tags</a>
                     </li>
                 </ul>
             </div>

@@ -21,3 +21,11 @@ Route::get('/projects', 'ProjectController@index');
 Route::get('/projects/{slug}/edit', 'ProjectController@edit');
 Route::patch('/projects/{id}', 'ProjectController@update');
 Route::delete('/projects/{id}', 'ProjectController@destroy');
+
+// tags
+Route::get('/tags', 'TagController@index')->name('admin.tags.index');
+Route::get('/tags/create', 'TagController@create')->name('admin.tags.create');
+Route::post('/tags', 'TagController@store')->name('admin.tags.store');
+Route::get('/tags/{id}/edit', 'TagController@edit')->name('admin.tags.edit');
+Route::patch('/tags/{id}', 'TagController@update')->name('admin.tags.update');
+Route::delete('/tags/{id}', 'TagController@destroy')->name('admin.tags.destroy');

@@ -21,12 +21,11 @@ class Project extends Model implements HasMedia
         self::saving(function ($project) {
 
             $slug = str_slug($project->name);
+            $test = self::where('slug', '=', $slug)->exists();
 
-            // check if slug exists
-            do{
+            if ($test === true) {
                 $slug = $slug . '-1';
             }
-            while(self::where('slug', $slug)->first());
 
             $project->slug = $slug;
         });
