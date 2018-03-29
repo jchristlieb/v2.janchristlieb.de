@@ -48,7 +48,7 @@
         <div class="row">
 
             <div class="form-group col-sm-6">
-                <label for="exampleFormControlFile1">Select Image</label>
+                <label>Select Images</label>
                 <input  type="file" name="images[]" class="form-control-file"
                        id="exampleFormControlFile1" multiple>
             </div>

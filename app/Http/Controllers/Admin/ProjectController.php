@@ -75,7 +75,7 @@ class ProjectController extends Controller
             $project
                 ->addMedia($image)
                 ->withResponsiveImages()
-                ->toMediaCollection();
+                ->toMediaCollection($project->slug);
         }
 
 
