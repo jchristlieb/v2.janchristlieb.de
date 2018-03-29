@@ -39,7 +39,7 @@
             <label for="exampleFormControlSelect2">Select tags</label>
             <select multiple class="form-control" name="tags[]">
                 @foreach($tags as $tag)
-                    <option>{{ $tag }}</option>
+                    <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                     @endforeach
             </select>
         </div>
@@ -49,19 +49,8 @@
 
             <div class="form-group col-sm-6">
                 <label for="exampleFormControlFile1">Select Image</label>
-                <input type="file" name="image-1" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-            <div class="form-group col-sm-6">
-                <label for="exampleFormControlFile1">Select 2nd Image (optional)</label>
-                <input type="file" name="image-2" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-            <div class="form-group col-sm-6">
-                <label for="exampleFormControlFile1">Select 3rd Image (optional)</label>
-                <input type="file" name="image-3" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-            <div class="form-group col-sm-6">
-                <label for="exampleFormControlFile1">Select 4th Image (optional)</label>
-                <input type="file" name="image-4" class="form-control-file" id="exampleFormControlFile1">
+                <input  type="file" name="images[]" class="form-control-file"
+                       id="exampleFormControlFile1" multiple>
             </div>
 
         </div>

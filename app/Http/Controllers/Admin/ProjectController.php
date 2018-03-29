@@ -30,7 +30,7 @@ class ProjectController extends Controller
     public function create()
     {
         // query name and id of each tag
-        $tags = Tag::pluck('name', 'id');
+        $tags = Tag::all();
 
         // show form to create new project
         return view('admin.projects.create', compact('tags'));
@@ -56,12 +56,9 @@ class ProjectController extends Controller
             'repository' => 'nullable|url',
         ]);
 
-        $this->validate(request(), [
-            'image-1' => 'required|image',
-            'image-2' => 'nullable|image',
-            'image-3' => 'nullable|image',
-            'image-4' => 'nullable|image',
-        ]);
+//        $this->validate(request(), [
+//            'images' => 'required|image',
+//        ]);
 
         // create a new project using the request data
 
@@ -69,45 +66,19 @@ class ProjectController extends Controller
 
         // retrieve the selected tags ID
         $tags = $request->input('tags');
-        dd($tags);
 
         // link the $tags to the $project
         $project->tags()->attach($tags);
 
         // associate images to the project
-
-        $project
-            ->addMediaFromRequest('image-1')
-//            ->setFileName($project->slug)
-            ->withAttributes(['alt' => $project->title, 'title' => $project->name])
-            ->withResponsiveImages()
-            ->toMediaCollection($project->slug);
-
-        if (is_uploaded_file('image-2')) {
+        foreach ($request->file('images') as $image) {
             $project
-                ->addMediaFromRequest('image-2')
-//            ->setFileName($project->slug)
-                ->withAttributes(['alt' => $project->title, 'title' => $project->name])
+                ->addMedia($image)
                 ->withResponsiveImages()
-                ->toMediaCollection($project->slug);
-        }
-        if (is_uploaded_file('image-3')) {
-            $project
-                ->addMediaFromRequest('image-3')
-//            ->setFileName($project->slug)
-                ->withAttributes(['alt' => $project->title, 'title' => $project->name])
-                ->withResponsiveImages()
-                ->toMediaCollection($project->slug);
+                ->toMediaCollection();
         }
 
-        if (is_uploaded_file('image-4')) {
-            $project
-                ->addMediaFromRequest('image-4')
-//            ->setFileName($project->slug)
-                ->withAttributes(['alt' => $project->title, 'title' => $project->name])
-                ->withResponsiveImages()
-                ->toMediaCollection($project->slug);
-        }
+
 
         // redirect to the dashboard
 
