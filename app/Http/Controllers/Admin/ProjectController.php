@@ -44,15 +44,16 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
         // validate requested data
 
         $validatedData = $this->validate(request(), [
             'name' => 'required',
-            'title' => 'required',
-            'description' => 'required',
-            'date' => 'required',
+            'title' => 'nullable',
+            'description' => 'nullable',
+            'date' => 'nullable',
             'client' => 'nullable',
-            'link' => 'required|url',
+            'link' => 'nullable|url',
             'repository' => 'nullable|url',
         ]);
 
@@ -77,8 +78,6 @@ class ProjectController extends Controller
                 ->withResponsiveImages()
                 ->toMediaCollection($project->slug);
         }
-
-
 
         // redirect to the dashboard
 

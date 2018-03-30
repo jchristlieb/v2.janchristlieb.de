@@ -39,25 +39,21 @@ class CreateProjectTest extends TestCase
         $tags = factory(Tag::class,2)->create();
 
         // ausführung
-        $this->post('/admin/projects', [
+        $project = $this->post('/admin/projects', [
             'name' => 'Project Name',
             'title' => 'Title',
             'description' => 'Description',
             'date' => '01-16-2018',
             'link' => 'https://example.org',
             'tags' =>$tags->pluck('id'),
-            'images' => [
-                UploadedFile::fake()->image('image.jpg'),
-                UploadedFile::fake()->image('image2.jpg'),
-            ]
+            'images' => UploadedFile::fake()->image('image.jpg'),
         ]);
 
-        //dd(session()->all());
         // behauptung
         $this->assertEquals(1, Project::count());
         $project = Project::first();
         $this->assertEquals('Project Name', $project->name);
         $this->assertEquals('Title', $project->title);
-        $this->assertCount(2,$project->getMedia());
+        $this->assertCount(1,$project->getMedia($project->slug));
     }
 }

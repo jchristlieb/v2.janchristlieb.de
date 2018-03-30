@@ -13,11 +13,11 @@
         </div>
         <div class="form-group">
             <label>Title</label>
-            <input name="title" type="text" class="form-control" required>
+            <input name="title" type="text" class="form-control">
         </div>
         <div class="form-group">
             <label>Description</label>
-            <textarea name="description" type="text" class="form-control" required></textarea>
+            <textarea name="description" type="text" class="form-control"></textarea>
         </div>
         <div class="form-group">
             <label>Client</label>
@@ -25,11 +25,11 @@
         </div>
         <div class="form-group">
             <label>Date</label>
-            <input name="date" type="date" class="form-control" required>
+            <input name="date" type="date" class="form-control">
         </div>
         <div class="form-group">
             <label>Project Website</label>
-            <input name="link" type="text" class="form-control" required>
+            <input name="link" type="text" class="form-control">
         </div>
         <div class="form-group">
             <label>GitHub Repository</label>
@@ -49,8 +49,7 @@
 
             <div class="form-group col-sm-6">
                 <label>Select Images</label>
-                <input  type="file" name="images[]" class="form-control-file"
-                       id="exampleFormControlFile1" multiple>
+                <input multiple type="file" name="images[]" class="form-control-file">
             </div>
 
         </div>

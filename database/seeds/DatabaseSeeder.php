@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->command->info('User generated');
 
         // create projects
-        $projects = factory(\App\Project::class, 7)->create();
+        $projects = factory(\App\Project::class, 2)->create();
         $this->command->info('Projects created');
 
         // create tags
