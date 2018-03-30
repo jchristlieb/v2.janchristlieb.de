@@ -80,7 +80,6 @@ class ProjectController extends Controller
         }
 
         // redirect to the dashboard
-
         return view('admin.dashboard');
     }
 
