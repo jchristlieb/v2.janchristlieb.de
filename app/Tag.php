@@ -27,6 +27,7 @@ class Tag extends Model
 
     public function projects()
     {
+        // establish many-to-many relationship for tags with projects
         return $this->belongsToMany(Project::class);
     }
 }

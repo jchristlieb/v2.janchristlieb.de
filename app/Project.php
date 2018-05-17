@@ -38,6 +38,7 @@ class Project extends Model implements HasMedia
 
     public function tags()
     {
+        // establish many-to-many relationship from projects to tags
         return $this->belongsToMany(Tag::class);
     }
 }

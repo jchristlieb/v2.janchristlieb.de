@@ -30,6 +30,9 @@ Route::get('/projects', 'PortfolioController@index');
 Route::post('/projects', 'PortfolioController@index');
 Route::get('/projects/{slug}', 'PortfolioController@single');
 
+// tags
+Route::get('/tags/{slug}', 'TagController@single')->name('tags.single');
+
 // Authentication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login');
@@ -41,5 +44,3 @@ $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
-// dashboard
-//Route::get('/admin', 'Admin\HomeController@index');
