@@ -2,23 +2,21 @@
 $body-col: #52738A;
 
 // Main color
-$main-col: #ffffff;
+$main-col: #F7F5EF;
 $main-col-lighter: lighten($main-col, 20%);
 $main-col-darker: darken($main-col, 3%);
 
 // Highlight color
-$highlight-col: #871212;
+$highlight-col: #DB735C;
 $highlight-col-lighter: lighten($highlight-col, 20%);
 $highlight-col-darker: darken($highlight-col, 20%);
 
 // Text color
-$text-col: #636b6f;
+$text-col: #222;
 $text-col-lighter: lighten($text-col, 20%);
 
 
 // Typography
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-$font-family-sans-serif: "Raleway", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 

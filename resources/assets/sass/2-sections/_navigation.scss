@@ -1,0 +1,9 @@
+nav {
+  a {
+    font-size: 1.125rem;
+    color: $text-col;
+    &:hover, &:active {
+      color: $highlight-col-darker;
+    }
+  }
+}

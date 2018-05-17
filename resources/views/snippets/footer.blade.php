@@ -6,10 +6,11 @@
         <div class="col-auto mr-auto mt-3 mb-3">
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="/legal">Legal notice</a></li>
+                <li class="list-inline-item"><a href="/privacy">Privacy</a></li>
             </ul>
         </div>
         <div class="col-auto mt-3 mb-3">
-            <ul class="list-inline">
+            <ul class="list-inline social-media">
                 <li class="list-inline-item"><a href="https://github.com/jchristlieb"><i
                                 class="fab fa-github-square fa-2x"></i>
 
