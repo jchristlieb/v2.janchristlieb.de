@@ -16,8 +16,8 @@
             <div class="col-12">
                 <div class="jumbotron mt-4 mb-4">
                     <h1 class="display-4 mb-4">Hello.</h1>
-                    <p class="lead">My name is Jan. I build web sites and web applications for clients and for fun. Feel
-                        free to look around. You may review my projects or read about why I do what I do.</p>
+                    <p class="lead">My name is Jan. I build web sites and web applications for clients and for fun. On
+                        my GitHub page you'll find my open source projects.</p>
                     <p class="lead">Looking for someone to collaborate with? I am available for projects. Just send a
                         short request to mail[at]janchristlieb[.]de or simply hit the button below.</p>
                     <a class="btn btn-primary" href="mailto:mail@janchristlieb.de">Let's chat</a>
