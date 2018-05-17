@@ -25,6 +25,11 @@ Route::get('/legal', function() {
    return view ('legal');
 });
 
+// privacy
+Route::get('/privacy', function () {
+    return view ('privacy');
+});
+
 // project
 Route::get('/projects', 'PortfolioController@index');
 Route::post('/projects', 'PortfolioController@index');
