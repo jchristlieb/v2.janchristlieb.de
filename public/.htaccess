@@ -1,13 +1,12 @@
+# Force HTTPS
+RewriteEngine On
+RewriteCond %{SERVER_PORT}     !^443$
+RewriteRule (.*)  https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-
-    RewriteEngine On
-
-    # Force HTTPS
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
