@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/*!
+/*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -32,7 +32,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Raleway", sans-serif;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -72,7 +72,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6094,7 +6094,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6219,7 +6219,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Raleway", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -9996,18 +9996,89 @@ a.text-dark:focus {
   }
 }
 
+@font-face {
+  font-family: Vollkorn;
+  src: url("/public/fonts/vollkorn/Vollkorn-Medium.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Vollkorn;
+  src: url("/public/fonts/vollkorn/Vollkorn-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Vollkorn;
+  src: url("/public/fonts/vollkorn/Vollkorn-Italic.ttf") format("truetype");
+  font-style: italic;
+}
+
+p,
+a,
+h4,
+h5,
+h6 {
+  font-family: Vollkorn;
+  font-style: normal;
+  color: #222;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Vollkorn;
+  font-weight: bold;
+}
+
+a,
+a:visited {
+  color: #222;
+}
+
+a:hover,
+a:active,
+a:visited:hover,
+a:visited:active {
+  color: #ab3e26;
+  text-decoration: none;
+}
+
+a.color {
+  color: #ab3e26;
+}
+
+a.color:hover,
+a.color:active {
+  color: #ab3e26;
+  text-decoration: underline;
+}
+
+.social-media a {
+  color: #DB735C;
+}
+
+.social-media a:hover,
+.social-media a:active {
+  color: #ab3e26;
+}
+
+.display-4 {
+  margin: 0;
+}
+
 body {
   background-color: #52738A;
 }
 
 @media screen and (max-width: 859px) {
   body {
-    background-color: #ffffff;
+    background-color: #F7F5EF;
   }
 }
 
 .bg__main-col {
-  background-color: #ffffff;
+  background-color: #F7F5EF;
 }
 
 .container {
@@ -10015,13 +10086,30 @@ body {
 }
 
 .intro {
-  background-color: #f7f7f7;
+  background-color: #f2efe5;
   width: 800px;
   padding: 1.7rem;
 }
 
 .dropdown-menu {
   min-width: 0;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.btn-primary {
+  color: #F7F5EF;
+  font-weight: bold;
+  background-color: #DB735C;
+  border: 1px solid #DB735C;
+}
+
+.btn-primary:hover {
+  color: #F7F5EF;
+  background-color: #ab3e26;
+  border: 1px solid #ab3e26;
 }
 
 .fake-browser-ui {
@@ -10100,7 +10188,17 @@ body {
 .section_welcome .jumbotron,
 .section_welcome .intro {
   padding: 3rem;
-  background-color: #f7f7f7;
+  background-color: #f2efe5;
+}
+
+nav a {
+  font-size: 1.125rem;
+  color: #222;
+}
+
+nav a:hover,
+nav a:active {
+  color: #ab3e26;
 }
 
 /*!

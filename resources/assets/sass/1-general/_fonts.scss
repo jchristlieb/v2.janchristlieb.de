@@ -1,1 +1,55 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@font-face {
+  font-family: Vollkorn;
+  src: url("/public/fonts/vollkorn/Vollkorn-Medium.ttf") format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Vollkorn;
+  src: url("/public/fonts/vollkorn/Vollkorn-Bold.ttf") format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Vollkorn;
+  src: url("/public/fonts/vollkorn/Vollkorn-Italic.ttf") format('truetype');
+  font-style: italic;
+}
+
+p, a, h4, h5, h6 {
+  font-family: Vollkorn;
+  font-style: normal;
+  color: $text-col;
+}
+
+h1, h2, h3 {
+  font-family: Vollkorn;
+  font-weight: bold;
+}
+
+a, a:visited {
+  color: $text-col;
+  &:hover, &:active {
+    color: $highlight-col-darker;
+    text-decoration: none;
+  }
+}
+
+a.color {
+  color: $highlight-col-darker;
+  &:hover, &:active {
+    color: $highlight-col-darker;
+    text-decoration: underline;
+  }
+}
+
+.social-media a {
+  color: $highlight-col;
+  &:hover, &:active {
+    color: $highlight-col-darker;
+  }
+}
+
+.display-4 {
+  margin: 0;
+}

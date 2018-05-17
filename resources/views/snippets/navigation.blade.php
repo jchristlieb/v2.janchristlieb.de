@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand mt-4 mb-4">
     <ul class="navbar-nav text-center">
         <li class="nav-link pl-0"><a href="/">Home</a></li>
-        <li class="nav-link"><a href="/projects">Projects</a></li>
-        <li class="nav-link"><a href="">Toolbox</a></li>
-        <li class="nav-link"><a href="/about">About</a></li>
+        {{--<li class="nav-link"><a href="/projects">Projects</a></li>--}}
+        {{--<li class="nav-link"><a href="">Toolbox</a></li>--}}
+        {{--<li class="nav-link"><a href="/about">About</a></li>--}}
     </ul>
     <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->

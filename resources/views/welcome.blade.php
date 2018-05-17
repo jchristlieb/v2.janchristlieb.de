@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.master-nonav')
 
 
 @section('intro')
-    <div class="section_welcome text-center m-4">
+    <div class="section_welcome text-center mt-50">
         <img class="img-intro" src="images/Jan-Christlieb.jpg">
         <h3 class="mt-4">Jan Christlieb</h3>
         <hr class="hr-intro">
