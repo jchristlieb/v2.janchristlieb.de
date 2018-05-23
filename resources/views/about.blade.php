@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('meta-info')
+    <title>My story</title>
+    <meta name="description" content="Life is an adventure. I traveled from IT management, to entrepreneurship to web development.">
+@endsection
 
 @section('intro')
     <div class="row">
