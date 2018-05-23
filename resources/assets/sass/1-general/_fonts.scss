@@ -1,31 +1,39 @@
 @font-face {
-  font-family: Vollkorn;
-  src: url("/public/fonts/vollkorn/Vollkorn-Medium.ttf") format('truetype');
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: Vollkorn;
-  src: url("/public/fonts/vollkorn/Vollkorn-Bold.ttf") format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: Vollkorn;
-  src: url("/public/fonts/vollkorn/Vollkorn-Italic.ttf") format('truetype');
-  font-style: italic;
-}
-
-p, a, h4, h5, h6 {
-  font-family: Vollkorn;
+  font-family: 'Montserrat';
   font-style: normal;
-  color: $text-col;
+  font-weight: 300;
+  src: url("../../../../public/fonts/typefont/montserrat-v12-latin-300.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../../../public/fonts/typefont/montserrat-v12-latin-regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../../../public/fonts/typefont/montserrat-v12-latin-500.ttf")
 }
 
 h1, h2, h3 {
-  font-family: Vollkorn;
-  font-weight: bold;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  color: $text-col;
 }
+
+p, a, h4, h5, h6 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  color: $text-col;
+}
+
+
 
 a, a:visited {
   color: $text-col;
@@ -52,4 +60,12 @@ a.color {
 
 .display-4 {
   margin: 0;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.highlight {
+  color: $highlight-col;
 }

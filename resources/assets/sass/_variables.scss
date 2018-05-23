@@ -1,5 +1,6 @@
 // Body
 $body-col: #52738A;
+$body-col-lighter: lighten($body-col, 10%);
 
 // Main color
 $main-col: #F7F5EF;
@@ -18,5 +19,8 @@ $text-col-lighter: lighten($text-col, 20%);
 
 // Typography
 $font-size-base: 0.9rem;
-$line-height-base: 1.6;
+$line-height-base: 1.8;
+
+// FontAwesome
+$fa-font-path: "../webfonts";
 
