@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('meta-info')
+    <title>Legal notice</title>
+    <meta name="description" content="This page is designed to provide you with information about the site owner">
+@endsection
 
 @section('intro')
     <div class="row">
@@ -13,7 +17,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h5 class="mb-4">Liability and information according to §5 TMG</h5>
+                <h3 class="">Liability and information</h3>
+                <p class="lead">According to §5 TMG</p>
                 <p>Jan Christlieb<br>
                     Schwartzkopffstraße 4<br>
                     10115 Berlin<br></p>
@@ -22,18 +27,19 @@
                     USt-IdNr.: DE305359246</p>
             </div>
             <div class="col-12">
-                <h5 class="mt-4 mb-4">Responsible for content according to §55 paragraph 2 RStV</h5>
+                <h3 class="mt-4">Responsible for content</h3>
+                <p class="lead">According to §55 paragraph 2 RStV</p>
                 <p>Jan Christlieb<br>
                     Schwartzkopffstraße 4<br>
                     10115 Berlin<br></p>
             </div>
             <div class="col-12">
-                <h5 class="mt-4 mb-4">Credits</h5>
-                <p>I solely build this website upon open source components. The backend runs on the wonderful
+                <h3 class="mt-4 mb-4">Credits</h3>
+                <p>I solely built this website upon open source components. The backend runs on the wonderful
                     <a class="color" href="https://laravel.com/" target="_blank">Laravel framework</a>. As you may recognize the
                     frontend is based upon <a class="color" href="https://getbootstrap.com/" target="_blank">Bootstrap 4</a>. Finally,
-                    the typeface is called <a class="color" href="http://vollkorn-typeface.com/" target="_blank">Vollkorn</a> designed
-                    by Friedrich Althausen.</p>
+                    the typeface is called <a class="color" href="https://github.com/JulietaUla/Montserrat" target="_blank">Montserrat</a> designed
+                    by Julieta Ulanovsky.</p>
             </div>
         </div>
     </div>
