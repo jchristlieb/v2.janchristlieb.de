@@ -1,0 +1,11 @@
+.btn-primary {
+  color: $main-col;
+  font-weight: bold;
+  background-color: $highlight-col;
+  border: 1px solid $highlight-col;
+  &:hover {
+    color: $main-col;
+    background-color: $highlight-col-darker;
+    border: 1px solid $highlight-col-darker;
+  }
+}

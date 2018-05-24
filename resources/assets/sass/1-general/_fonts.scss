@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../../../public/fonts/typefont/montserrat-v12-latin-300.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../../../public/fonts/typefont/montserrat-v12-latin-regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../../../public/fonts/typefont/montserrat-v12-latin-500.ttf")
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  color: $text-col;
+}
+
+p, a, h4, h5, h6 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  color: $text-col;
+}
+
+
+
+a, a:visited {
+  color: $text-col;
+  &:hover, &:active {
+    color: $highlight-col-darker;
+    text-decoration: none;
+  }
+}
+
+a.color {
+  color: $highlight-col-darker;
+  &:hover, &:active {
+    color: $highlight-col-darker;
+    text-decoration: underline;
+  }
+}
+
+.social-media a {
+  color: $highlight-col;
+  &:hover, &:active {
+    color: $highlight-col-darker;
+  }
+}
+
+.display-4 {
+  margin: 0;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.highlight {
+  color: $highlight-col;
+}

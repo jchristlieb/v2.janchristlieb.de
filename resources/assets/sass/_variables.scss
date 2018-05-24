@@ -1,0 +1,26 @@
+// Body
+$body-col: #52738A;
+$body-col-lighter: lighten($body-col, 10%);
+
+// Main color
+$main-col: #F7F5EF;
+$main-col-lighter: lighten($main-col, 20%);
+$main-col-darker: darken($main-col, 3%);
+
+// Highlight color
+$highlight-col: #DB735C;
+$highlight-col-lighter: lighten($highlight-col, 20%);
+$highlight-col-darker: darken($highlight-col, 20%);
+
+// Text color
+$text-col: #222;
+$text-col-lighter: lighten($text-col, 20%);
+
+
+// Typography
+$font-size-base: 0.9rem;
+$line-height-base: 1.8;
+
+// FontAwesome
+$fa-font-path: "../webfonts";
+

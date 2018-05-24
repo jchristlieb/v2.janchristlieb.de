@@ -1,0 +1,20 @@
+// dependencies for the sass files
+@import "variables";
+@import '~bootstrap/scss/bootstrap';
+
+
+// saas files
+@import "1-general/fonts";
+@import "1-general/global";
+@import "1-general/buttons";
+@import "1-general/images";
+@import "2-sections/project";
+@import "2-sections/welcome";
+@import "2-sections/navigation";
+
+// Vendors
+@import "../fontawesome/scss/fontawesome.scss";
+@import "../fontawesome/scss/fa-brands.scss";
+@import "../fontawesome/scss/fa-light.scss";
+
+
