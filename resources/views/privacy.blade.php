@@ -23,7 +23,18 @@
             </div>
             <div class="col-12 mb-2">
                 <h3 class="mb-2">Cookies</h3>
-                <p>I do not set any cookies on my website.</p>
+                <p>This website <strong>partly uses cookies</strong>. Cookies are tiny text files stored on your device.
+                    However, cookies are not evil by default. The cookies I use do not process any personal data. In
+                    general, there are two kinds of cookies: session and persistent ones.</p>
+                <h4>Session cookies</h4>
+                <p>Session cookies are used to enable certain interaction and make those interactions more save. It is
+                    called session cookie, because those text files will automatically be deleted as soon as your
+                    session ends, e.g. you leave
+                    my website.</p>
+                <h4>Persistent cookies</h4>
+                <p>In contrast, persistent cookies continue to life on your device until the defined expiration date is
+                    due or you instruct your browser to delete certain or all stored cookies. I advice you to clear your
+                    cookie history from time to time. Please check your browser manual for instructions.</p>
             </div>
             <div class="col-12 mb-2">
                 <h3 class="mb-2">Logfiles</h3>
