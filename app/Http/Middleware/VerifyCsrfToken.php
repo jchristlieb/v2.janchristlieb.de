@@ -12,6 +12,10 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        'https://www.janchristlieb.de/',
+        'https://www.janchristlieb.de/about/*',
+        'https://www.janchristlieb.de/legal/*',
+        'https://www.janchristlieb.de/privacy/*',
+        'https://www.janchristlieb.de/projects/*',
     ];
 }
