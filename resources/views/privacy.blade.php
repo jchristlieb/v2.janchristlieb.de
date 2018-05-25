@@ -25,17 +25,7 @@
                 <h3 class="mb-2">Cookies</h3>
                 <p>This website uses non personal related cookies solely for technical and security
                     reason. Cookies are tiny text files stored on your device.
-                    However, cookies are not evil by default. <strong>The cookies I use do not process any personal data.</strong> In
-                    general, there are two kinds of cookies: session and persistent ones.</p>
-                <h4>Session cookies</h4>
-                <p>Session cookies are used to enable certain interaction and make those interactions more save. It is
-                    called session cookie, because those text files will automatically be deleted as soon as your
-                    session ends, e.g. you leave
-                    my website.</p>
-                <h4>Persistent cookies</h4>
-                <p>In contrast, persistent cookies continue to life on your device until the defined expiration date is
-                    due or you instruct your browser to delete certain or all stored cookies. <strong>I do not store any
-                        persistent cookies.</strong></p>
+                    However, cookies are not evil by default. <strong>The cookies I use do not process any personal data.</strong>.</p>
                 <h4 class="mb-2">List of used cookies</h4>
                 <table class="table table-hover table-responsive-md">
                     <thead>
@@ -60,7 +50,7 @@
                         <td>random hash key</td>
                         <td>all</td>
                         <td>1 day</td>
-                        <td>technical: if applicable it stores encrypted user information e.g. to access restricted pages like admin board</td>
+                        <td>technical: if applicable it stores encrypted user information e.g. language preferences or access rights to restricted pages</td>
                     </tr>
                     </tbody>
                 </table>
