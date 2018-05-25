@@ -23,8 +23,9 @@
             </div>
             <div class="col-12 mb-2">
                 <h3 class="mb-2">Cookies</h3>
-                <p>This website <strong>partly uses cookies</strong>. Cookies are tiny text files stored on your device.
-                    However, cookies are not evil by default. The cookies I use do not process any personal data. In
+                <p>This website uses non personal related cookies solely for technical and security
+                    reason. Cookies are tiny text files stored on your device.
+                    However, cookies are not evil by default. <strong>The cookies I use do not process any personal data.</strong> In
                     general, there are two kinds of cookies: session and persistent ones.</p>
                 <h4>Session cookies</h4>
                 <p>Session cookies are used to enable certain interaction and make those interactions more save. It is
@@ -33,8 +34,36 @@
                     my website.</p>
                 <h4>Persistent cookies</h4>
                 <p>In contrast, persistent cookies continue to life on your device until the defined expiration date is
-                    due or you instruct your browser to delete certain or all stored cookies. I advice you to clear your
-                    cookie history from time to time. Please check your browser manual for instructions.</p>
+                    due or you instruct your browser to delete certain or all stored cookies. <strong>I do not store any
+                        persistent cookies.</strong></p>
+                <h4 class="mb-2">List of used cookies</h4>
+                <table class="table table-hover table-responsive-md">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Value</th>
+                        <th scope="col">Paths</th>
+                        <th scope="col">Storage</th>
+                        <th scope="col">Reason</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">XSRF-Token</th>
+                        <td>random hash key</td>
+                        <td>all</td>
+                        <td>1 day</td>
+                        <td>security: prevents you against <a class="underline" href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" target="_blank">CSRF attacks</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">jc_session</th>
+                        <td>random hash key</td>
+                        <td>all</td>
+                        <td>1 day</td>
+                        <td>technical: if applicable it stores encrypted user information e.g. to access restricted pages like admin board</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="col-12 mb-2">
                 <h3 class="mb-2">Logfiles</h3>
