@@ -21,7 +21,37 @@
             </div>
             <div class="col-12 mb-2">
                 <h3 class="mb-2">Cookies</h3>
-                <p>I do not set any cookies on my website.</p>
+                <p>This website uses non personal related cookies solely for technical and security
+                    reason. Cookies are tiny text files stored on your device.
+                    However, cookies are not evil by default. <strong>The cookies I use do not process any personal data.</strong>.</p>
+                <h4 class="mb-2">List of used cookies</h4>
+                <table class="table table-hover table-responsive-md">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Value</th>
+                        <th scope="col">Paths</th>
+                        <th scope="col">Storage</th>
+                        <th scope="col">Reason</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">XSRF-Token</th>
+                        <td>random hash key</td>
+                        <td>all</td>
+                        <td>1 day</td>
+                        <td>security: prevents you against <a class="underline" href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" target="_blank">CSRF attacks</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">jc_session</th>
+                        <td>random hash key</td>
+                        <td>all</td>
+                        <td>1 day</td>
+                        <td>technical: if applicable it stores encrypted user information e.g. language preferences or access rights to restricted pages</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="col-12 mb-2">
                 <h3 class="mb-2">Logfiles</h3>
