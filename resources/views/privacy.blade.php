@@ -8,7 +8,7 @@
 @section('intro')
     <div class="row">
         <div class="intro">
-            <h1 class="display-4">Privacy</h1>
+            <h1 class="display-4">Data privacy</h1>
         </div>
     </div>
 @endsection
@@ -25,8 +25,8 @@
                 <h3 class="mb-2">Cookies</h3>
                 <p>This website uses non personal related cookies solely for technical and security
                     reason. Cookies are tiny text files stored on your device.
-                    However, cookies are not evil by default. <strong>The cookies I use do not process any personal data.</strong>.</p>
-                <h4 class="mb-2">List of used cookies</h4>
+                    However, cookies are not evil by default. The cookies I use do not process any personal data.</p>
+                <h4 class="mb-2 mt-2">List of used cookies</h4>
                 <table class="table table-hover table-responsive-md">
                     <thead>
                     <tr>
