@@ -1,6 +1,6 @@
 # Force HTTPS
 RewriteEngine On
-RewriteCond %{SERVER_PORT}     !^443$
+RewriteCond %{SERVER_PORT} !^443$
 RewriteRule (.*)  https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
 
 <IfModule mod_rewrite.c>
