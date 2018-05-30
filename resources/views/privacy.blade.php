@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('meta-info')
-    <title>Privacy information</title>
+    <title>Data privacy</title>
     <meta name="description" content="You may surf anonymously on my website. Nice, isn't it?">
 @endsection
 
