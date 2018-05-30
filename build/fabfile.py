@@ -114,21 +114,10 @@ def _deploy_git_factory():
 
   class GitFilter(fabdeploit.GitFilter):
     def filter(self):
-      for obj in self.filtered_tree:
-        if obj.path not in ('web','config'):
-          self.remove(obj.name)
 
       #fab.execute(css)
       for filename in (
-        'app',
-        'public',
-        'bootstrap',
-        'config',
-        'database',
-        'resources',
-        'routes',
-        'storage/framework',
-        'vendor'
+        'vendor',
       ):
         if os.path.exists(os.path.join(self.repo.working_tree_dir, filename)):
           self.add(filename)
@@ -152,12 +141,12 @@ def _deploy_base_env():
 @fab.task
 def production():
   fab.env.git = _deploy_git_factory()(
-    remote_repository_path='/var/www/vhosts/janchristlieb.de/httpdocs',  # get this ready
+    remote_repository_path='/home/www/p461591/html',  # get this ready
     release_branch='production',
   )
 
   _deploy_base_env()
-  fab.env.hosts = ['janchristlieb']
+  fab.env.hosts = ['jan.mittwald']
 
 @fab.task
 def staging():
@@ -197,5 +186,4 @@ def deploy(*args):
 
   # prepare
   fab.execute(deploy_files)
-  fab.local('git checkout master')
 
