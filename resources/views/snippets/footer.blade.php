@@ -6,7 +6,7 @@
         <div class="col-auto mr-auto mt-3 mb-3">
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="/legal">Legal notice</a></li>
-                <li class="list-inline-item"><a href="/privacy">Privacy</a></li>
+                <li class="list-inline-item"><a href="/privacy">Data privacy</a></li>
             </ul>
         </div>
         <div class="col-auto mt-3 mb-3">
