@@ -141,7 +141,7 @@ def _deploy_base_env():
 @fab.task
 def production():
   fab.env.git = _deploy_git_factory()(
-    remote_repository_path='/home/www/p461591/html',  # get this ready
+    remote_repository_path='/home/www/p461591/html/janchristlieb.de',  # get this ready
     release_branch='production',
   )
 
