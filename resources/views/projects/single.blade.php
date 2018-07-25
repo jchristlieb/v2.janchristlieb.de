@@ -78,8 +78,10 @@
                 <p class="lead">{{ \Carbon\Carbon::parse($project->date)->format('Y') }}</p>
                 <h5 class="text-muted mt-4"><i class="fal fa-external-link mr-2"></i>Link</h5>
                 <a class="lead underline" target="_blank" href="{{ $project->link }}">{{ $project->link }}</a>
+               @if($project->repository != "")
                 <h5 class="text-muted mt-4"><i class="fab fa-github mr-2"></i>Repository</h5>
                 <a class="lead underline" target="_blank" href="{{ $project->repository }}">{{ $project->repository }}</a>
+                   @endif
             </div>
         </div>
     </div>
