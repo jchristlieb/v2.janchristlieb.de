@@ -1,4 +1,4 @@
-@extends('layouts.master-nonav')
+@extends('layouts.master')
 
 @section('meta-info')
     <title>Welcome</title>
@@ -14,7 +14,7 @@
         <img class="img-intro" src="images/Jan-Christlieb.jpg">
         <h3 class="mt-4">Jan Christlieb</h3>
         <hr class="hr-intro">
-        <p>Web developer from Berlin</p>
+        <p>Web developer from Berlin<br/>specializing in E-Commerce</p>
     </div>
 @endsection
 

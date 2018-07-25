@@ -69,3 +69,14 @@ a.color {
 .highlight {
   color: $highlight-col;
 }
+
+small, .small {
+  font-size: 50%;
+}
+
+.section_project_single {
+  p {
+    font-size: 1.125rem;
+    font-weight: 300;
+  }
+}

@@ -3,8 +3,8 @@
 @section('intro')
     <div class="row">
         <div class="intro">
-            <h1 class="display-4 mb-4">{{ $project->title }}</h1>
-            <a class="lead" href="{{ $project->link }}">{{ $project->link }}</a>
+            <h1 class="display-4">{{ $project->name }}</h1>
+                <h4 class="text-muted">{{ $project->title }}</h4>
         </div>
     </div>
 @endsection
@@ -12,7 +12,14 @@
 
 @section('content')
 
-    <div class="row section_project">
+    <div class="row section_project section_project_single">
+        <div class="col-12">
+            <div class="ml-4 mr-4">
+                @foreach($project->tags as $tag)
+                    <span class="badge badge-primary p-2 mb-2 mr-2">{{ $tag->name }}</span>
+                @endforeach
+            </div>
+        </div>
         <div class="m-4">
             <div class="col-12">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -54,26 +61,25 @@
 
             </div>
         </div>
-        <div class="col-12">
+        <div class="col-12 ">
             <div class="m-4">
-                <h2 class="mb-2">{{ $project->title }}</h2>
-                @foreach($project->tags as $tag)
-                    <span class="badge badge-primary">{{ $tag->name }}</span>
-                @endforeach
-                <p class="mt-2">{{ $project->description }}</p>
+                <h2 class="mb-2">{{ $project->subtitle }}</h2>
+                <p class="mt-2">{!! $project->description !!}</p>
             </div>
         </div>
         <div class="col-12">
             <div class="m-4">
                 <h2>In a nutshell</h2>
-                <h5 class="text-muted mt-4">Client</h5>
+                <h5 class="text-muted mt-4"><i class="fal fa-wrench mr-2"></i>Technology stack</h5>
+                <p class="lead">{!! $project->techstack !!}</p>
+                <h5 class="text-muted mt-4"><i class="fal fa-user-circle mr-2"></i>Client</h5>
                 <p class="lead">{{ $project->client }}</p>
-                <h5 class="text-muted mt-4">Year</h5>
-                <p class="lead">{{ $project->date }}</p>
-                <h5 class="text-muted mt-4">Link</h5>
-                <a class="lead" href="{{ $project->link }}">{{ $project->link }}</a>
-                <h5 class="text-muted mt-4">Repository</h5>
-                <a class="lead" href="{{ $project->repository }}">{{ $project->repository }}</a>
+                <h5 class="text-muted mt-4"><i class="fal fa-calendar-check mr-2"></i>Year</h5>
+                <p class="lead">{{ \Carbon\Carbon::parse($project->date)->format('Y') }}</p>
+                <h5 class="text-muted mt-4"><i class="fal fa-external-link mr-2"></i>Link</h5>
+                <a class="lead underline" target="_blank" href="{{ $project->link }}">{{ $project->link }}</a>
+                <h5 class="text-muted mt-4"><i class="fab fa-github mr-2"></i>Repository</h5>
+                <a class="lead underline" target="_blank" href="{{ $project->repository }}">{{ $project->repository }}</a>
             </div>
         </div>
     </div>
@@ -86,7 +92,9 @@
 
     <script>
 
-        $('.carousel').carousel()
+        $('.carousel').carousel({
+            interval: 5000
+        })
 
     </script>
 

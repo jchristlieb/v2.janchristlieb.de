@@ -32,12 +32,12 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">{{ $project->title }}</h5>
-                                <p class="card-text">{{ \Illuminate\Support\Str::words($project->description, 20, ' [...]') }}</p>
+                                <h5 class="card-title">{{ $project->name }}</h5>
+                                <p class="card-text">{!! \Illuminate\Support\Str::words($project->description, 20, ' [...]') !!}</p>
                             </div>
                             <div class="card-footer">
                                 @foreach($project->tags as $tag)
-                                    <span class="badge badge-primary">{{ $tag->name }}</span>
+                                    <span class="badge badge-primary p-2 mr-2">{{ $tag->name }}</span>
                                 @endforeach
                             </div>
                         </a>

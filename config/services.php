@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'domain' => env('mg.janchristlieb.de'),
+        'secret' => env('1a1434b3d0666be8d164ab225b32262d-770f03c4-1067e6a6'),
     ],
 
     'ses' => [
