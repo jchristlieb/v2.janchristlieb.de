@@ -20,7 +20,8 @@ body {
   @extend .jumbotron;
   background-color: $main-col-darker;
   width: 800px;
-  padding: 1.7rem;
+  padding: 1.7rem 2.3rem;
+  margin-bottom: 1.5rem;
 }
 
 // make user menu in line with master layout

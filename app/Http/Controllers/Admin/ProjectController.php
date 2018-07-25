@@ -50,7 +50,9 @@ class ProjectController extends Controller
         $validatedData = $this->validate(request(), [
             'name' => 'required',
             'title' => 'nullable',
+            'subtitle' => 'nullable',
             'description' => 'nullable',
+            'techstack' => 'nullable',
             'date' => 'nullable',
             'client' => 'nullable',
             'link' => 'nullable|url',
@@ -122,7 +124,9 @@ class ProjectController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'title' => 'required',
+            'subtitle' => 'required',
             'description' => 'required',
+            'techstack' => 'required',
             'date' => 'required',
             'client' => 'nullable',
             'link' => 'required|url',
