@@ -4,7 +4,7 @@
     <div class="row">
         <div class="intro">
             <h1 class="display-4">{{ $project->name }}</h1>
-                <h4 class="text-muted">{{ $project->title }}</h4>
+                <h4 class="text-muted mt-2">{{ $project->title }}</h4>
         </div>
     </div>
 @endsection

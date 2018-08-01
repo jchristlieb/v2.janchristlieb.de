@@ -4,8 +4,8 @@
 @section('intro')
     <div class="row">
         <div class="intro">
-            <h1 class="display-4 mb-4">Projects</h1>
-            <p class="lead">Get an idea of the products I build and the underlying technologies.</p>
+            <h1 class="display-4">Projects</h1>
+            <p class="lead mt-2">Get an idea of the products I build and the tools I use.</p>
         </div>
     </div>
 @endsection
