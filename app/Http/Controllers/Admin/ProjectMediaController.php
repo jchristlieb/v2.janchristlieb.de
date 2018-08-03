@@ -34,7 +34,8 @@ class ProjectMediaController extends Controller implements HasMedia
                         ->toMediaCollection($project->slug);
                 });
 
-        return view ('admin.dashboard');
+//        return view ('admin.dashboard');
+        return redirect(route('admin.projects.edit', $project->id));
     }
 
     public function destroy(request $request, $projectId, $mediaId)
@@ -45,24 +46,6 @@ class ProjectMediaController extends Controller implements HasMedia
         return redirect(route('admin.projects.edit', $projectId));
     }
 
-//    public function setDefault($projectID, $mediaID)
-//    {
-//
-//        $project = Project::find($projectID);
-//        $images = $project->getMedia($project->slug);
-//        $i = 2;
-//        foreach ($images as $image)
-//        {
-//            $image->order_column = $i;
-//            $i++;
-//        }
-//
-//        $default = Media::where('id', $mediaID)->update(['order_column' => '1']);
-//        dd($images);
-//
-//        return redirect(route('admin.projects.edit', $projectID));
-//
-//    }
 
     public function update(request $request, $projectId)
     {

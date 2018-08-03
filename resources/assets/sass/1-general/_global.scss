@@ -12,6 +12,10 @@ body {
   background-color: $main-col;
 }
 
+.bg__highlight-col {
+  background-color: $highlight-col;
+}
+
 .container {
   max-width: 800px !important;
 }
@@ -32,4 +36,14 @@ body {
 
 .mt-50 {
   margin-top: 50px;
+}
+
+.alert-info {
+  background-color: $highlight-col;
+  border-color: $highlight-col;
+  color: $text-col-lighter;
+  p, ul, ol, li {
+    font-size: 1.125rem;
+    font-weight: 300;
+  }
 }

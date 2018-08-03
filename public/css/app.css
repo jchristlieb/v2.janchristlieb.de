@@ -10528,6 +10528,10 @@ body {
   background-color: #F7F5EF;
 }
 
+.bg__highlight-col {
+  background-color: #DB735C;
+}
+
 .container {
   max-width: 800px !important;
 }
@@ -10545,6 +10549,20 @@ body {
 
 .mt-50 {
   margin-top: 50px;
+}
+
+.alert-info {
+  background-color: #DB735C;
+  border-color: #DB735C;
+  color: #555555;
+}
+
+.alert-info p,
+.alert-info ul,
+.alert-info ol,
+.alert-info li {
+  font-size: 1.125rem;
+  font-weight: 300;
 }
 
 .btn-primary {

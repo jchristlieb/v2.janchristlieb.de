@@ -81,8 +81,7 @@ class ProjectController extends Controller
                 ->toMediaCollection($project->slug);
         }
 
-        // redirect to the dashboard
-        return view('admin.dashboard');
+        return redirect(route('admin.projects.edit', $project->id));
     }
 
     /**
