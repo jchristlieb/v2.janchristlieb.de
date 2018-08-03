@@ -10503,7 +10503,10 @@ small,
   font-size: 50%;
 }
 
-.section_project_single p {
+.section_project_single p,
+.section_project_single ol,
+.section_project_single ul,
+.section_project_single li {
   font-size: 1.125rem;
   font-weight: 300;
 }
@@ -10605,6 +10608,11 @@ body {
 
 .project-image img {
   max-width: 100%;
+}
+
+.small_field {
+  width: 50px;
+  padding: 5px 10px;
 }
 
 .section_project .card {

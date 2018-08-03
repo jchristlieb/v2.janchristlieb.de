@@ -73,7 +73,8 @@
                 <tr>
                     <td><span class="badge badge-primary p-2 mb-2 mr-2">{{ $tag->name }}</span></td>
                     <td>
-                        <form method="POST" action="{{ route('admin.projects.tags.destroy', [$project->id, $tag->id]) }}">
+                        <form method="POST"
+                              action="{{ route('admin.projects.tags.destroy', [$project->id, $tag->id]) }}">
                             {{ csrf_field() }}
                             {{ method_field('delete') }}
                             <button type="submit" class="btn btn-link btn-sm">Remove</button>
@@ -89,37 +90,58 @@
     </div>
 
     <div>
+        <form method="post" action="{{ route('admin.projects.media.update', [$project->id]) }}">
+            {{ csrf_field() }}
+            {{ method_field('patch') }}
 
 
-        <table class="table table-hover table-responsive-md">
-            <thead>
-            <th scope="col">Thumbnail</th>
-            <th scope="col">Name</th>
-            <th scope="col">Action</th>
-            </thead>
-            <tbody>
+            <table class="table table-hover table-responsive-md">
+                <thead>
+                <th scope="col">Thumbnail</th>
+                <th scope="col">Position</th>
+                <th scope="col">Delete</th>
+                </thead>
+                <tbody>
 
 
-            @foreach($images as $image)
+                @foreach($images as $image)
 
-                {{--@dump($image)--}}
-                <tr>
-                    <td><img src="{{ $image->getUrl('thumb') }}"></td>
-                    <td>{{ $image->name }}</td>
-                    <td>
-                        <form method="POST"
-                              action="{{ route('admin.projects.media.destroy', [$project->id, $image->id]) }}">
+                    {{--@dump($image)--}}
+                    <tr>
+                        <td><img src="{{ $image->getUrl('thumb') }}"></td>
+                        <td>
+                            {{--<form method="post" action="{{ route('admin.projects.media.edit', [$project->id, $image->id]) }}">--}}
+                            {{--{{ csrf_field() }}--}}
+                            {{--{{ method_field('patch') }}--}}
+                            {{--<button type="submit" class="btn btn-link btn-sm">Set as default</button>--}}
+                            {{--</form>--}}
+                            <div class="">
+                                <input class="small_field" type="number" name="order[{{ $image->id }}]">
+                            </div>
+
+
+                        </td>
+                        <td>
+                            {{--<form method="POST"--}}
+                            {{--action="{{ route('admin.projects.media.destroy', [$project->id, $image->id]) }}">--}}
                             {{--<form method="POST" action="/admin/media/{{ $project->slug }}/destroy">--}}
-                            {{ csrf_field() }}
-                            {{ method_field('delete') }}
-                            <button type="submit" class="btn btn-link btn-sm">Remove</button>
-                        </form>
-                    </td>
-                </tr>
+                            {{--{{ csrf_field() }}--}}
+                            {{--{{ method_field('delete') }}--}}
+                            {{--<button type="submit" class="btn btn-link btn-sm">Remove</button>--}}
+                            {{--</form>--}}
+                            <div class="form-check">
+                                <input type="hidden" name="delete[{{ $image->id }}]" value="unchecked">
+                                <input class="form-check-input" type="checkbox" name="delete[{{ $image->id }}]">
+                                <label class="form-check-label" for="delete"></label>
+                            </div>
+                        </td>
+                    </tr>
 
-            @endforeach
-            </tbody>
-        </table>
+                @endforeach
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary">Update media</button>
+        </form>
     </div>
 
     <div class="row">

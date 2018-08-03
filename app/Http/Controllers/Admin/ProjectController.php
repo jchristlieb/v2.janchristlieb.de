@@ -164,7 +164,8 @@ class ProjectController extends Controller
     };
 
 
-        return view('admin.dashboard');
+        return redirect(route('admin.projects.edit', $project->id));
+
 
     }
 

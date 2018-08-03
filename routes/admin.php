@@ -26,6 +26,7 @@ Route::delete('/projects/{projectId}/tags/{tagId}', 'ProjectController@deletetag
 // Media
 Route::post('/media/{slug}/create', 'ProjectMediaController@create')->name('admin.projects.media.create');
 Route::delete('/projects/{projectId}/media/{mediaId}', 'ProjectMediaController@destroy')->name('admin.projects.media.destroy');
+Route::patch('/projects/{projectID}/media/update', 'ProjectMediaController@update')->name('admin.projects.media.update');
 
 
 // Tags

@@ -75,7 +75,7 @@ small, .small {
 }
 
 .section_project_single {
-  p {
+  p, ol, ul, li {
     font-size: 1.125rem;
     font-weight: 300;
   }
