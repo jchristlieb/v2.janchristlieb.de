@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace PHPUnit\Framework\Constraint;
 
 use SebastianBergmann\Diff\Differ;
@@ -22,18 +21,28 @@ class StringMatchesFormatDescription extends RegularExpression
      */
     private $string;
 
-    /**
-     * @param string $string
-     */
-    public function __construct($string)
+    public function __construct(string $string)
     {
         parent::__construct(
             $this->createPatternFromFormat(
-                \preg_replace('/\r\n/', "\n", $string)
+                $this->convertNewlines($string)
             )
         );
 
         $this->string = $string;
+    }
+
+    /**
+     * Evaluates the constraint for parameter $other. Returns true if the
+     * constraint is met, false otherwise.
+     *
+     * @param mixed $other value or object to evaluate
+     */
+    protected function matches($other): bool
+    {
+        return parent::matches(
+            $this->convertNewlines($other)
+        );
     }
 
     protected function failureDescription($other): string
@@ -43,8 +52,8 @@ class StringMatchesFormatDescription extends RegularExpression
 
     protected function additionalFailureDescription($other): string
     {
-        $from = \preg_split('(\r\n|\r|\n)', $this->string);
-        $to   = \preg_split('(\r\n|\r|\n)', $other);
+        $from = \explode("\n", $this->string);
+        $to   = \explode("\n", $this->convertNewlines($other));
 
         foreach ($from as $index => $line) {
             if (isset($to[$index]) && $line !== $to[$index]) {
@@ -81,7 +90,7 @@ class StringMatchesFormatDescription extends RegularExpression
                 '/(?<!%)%c/'
             ],
             [
-                \str_replace('\\', '\\\\', '\\' . DIRECTORY_SEPARATOR),
+                \str_replace('\\', '\\\\', '\\' . \DIRECTORY_SEPARATOR),
                 '[^\r\n]+',
                 '[^\r\n]*',
                 '.+',
@@ -99,5 +108,10 @@ class StringMatchesFormatDescription extends RegularExpression
         $string = \str_replace('%%', '%', $string);
 
         return '/^' . $string . '$/s';
+    }
+
+    private function convertNewlines($text): string
+    {
+        return \preg_replace('/\r\n/', "\n", $text);
     }
 }

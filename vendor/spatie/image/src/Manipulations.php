@@ -23,6 +23,10 @@ class Manipulations
     const ORIENTATION_180 = 180;
     const ORIENTATION_270 = 270;
 
+    const FLIP_HORIZONTALLY = 'h';
+    const FLIP_VERTICALLY = 'v';
+    const FLIP_BOTH = 'both';
+
     const FIT_CONTAIN = 'contain';
     const FIT_MAX = 'max';
     const FIT_FILL = 'fill';
@@ -86,6 +90,26 @@ class Manipulations
         }
 
         return $this->addManipulation('orientation', $orientation);
+    }
+
+    /**
+     * @param string $orientation
+     *
+     * @return $this
+     *
+     * @throws InvalidManipulation
+     */
+    public function flip(string $orientation)
+    {
+        if (! $this->validateManipulation($orientation, 'flip')) {
+            throw InvalidManipulation::invalidParameter(
+                'flip',
+                $orientation,
+                $this->getValidManipulationOptions('flip')
+            );
+        }
+
+        return $this->addManipulation('flip', $orientation);
     }
 
     /**
@@ -178,7 +202,7 @@ class Manipulations
     public function height(int $height)
     {
         if ($height < 0) {
-            throw InvalidManipulation::invalidWidth($height);
+            throw InvalidManipulation::invalidHeight($height);
         }
 
         return $this->addManipulation('height', $height);
@@ -639,7 +663,7 @@ class Manipulations
         return $this;
     }
 
-    public function mergeManipulations(Manipulations $manipulations)
+    public function mergeManipulations(self $manipulations)
     {
         $this->manipulationSequence->merge($manipulations->manipulationSequence);
 

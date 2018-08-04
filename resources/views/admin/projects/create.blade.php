@@ -16,8 +16,16 @@
             <input name="title" type="text" class="form-control">
         </div>
         <div class="form-group">
+            <label>Subtitle</label>
+            <input name="subtitle" type="text" class="form-control">
+        </div>
+        <div class="form-group">
             <label>Description</label>
             <textarea name="description" type="text" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Technology Stack</label>
+            <textarea name="techstack" type="text" class="form-control"></textarea>
         </div>
         <div class="form-group">
             <label>Client</label>

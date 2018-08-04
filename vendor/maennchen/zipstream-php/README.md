@@ -7,15 +7,11 @@
 Please see the file LICENSE.md for licensing and warranty information.  The
 latest version of this software is available at the following URL: https://github.com/maennchen/ZipStream-PHP
 
-## Instalation
-Simply add a dependency on maennchen/zipstream-php to your project's composer.json file if you use Composer to manage the dependencies of your project. Here is a minimal example of a composer.json file.
+## Installation
+Simply add a dependency on maennchen/zipstream-php to your project's composer.json file if you use Composer to manage the dependencies of your project. Use following command to add the package to your project's dependencies:
 
-```json
-{
-    "require": {
-        "maennchen/zipstream-php": "0.3.*"
-    }
-}
+```bash
+composer require maennchen/zipstream-php
 ```
 
 ## Overview
@@ -28,7 +24,7 @@ require 'vendor/autoload.php';
 # create a new zipstream object
 $zip = new ZipStream\ZipStream('example.zip');
 
-# create a file named 'hello.txt' 
+# create a file named 'hello.txt'
 $zip->addFile('hello.txt', 'This is the contents of hello.txt');
 
 # add a file named 'some_image.jpg' from a local file 'path/to/image.jpg'
@@ -45,13 +41,19 @@ $zip->finish();
 ```
 
 You can also add comments, modify file timestamps, and customize (or
-disable) the HTTP headers.  See the class file for details.  There are a
+disable) the HTTP headers. It is also possible to specify the storage method when adding files,
+the current default storage method is 'deflate' i.e files are stored with Compression mode 0x08.
+  See the class file for details.<!--  There are a
 couple of additional examples in the initial release announcement at the
-following URL: http://pablotron.org/?cid=1535
+following URL: http://pablotron.org/?cid=1535 -->
 
 ## Requirements
 
-  * PHP version 5.6 or newer.
+  * PHP version 7.0 or newer.
+
+## Further Documentation
+
+  * [Using ZipStream in Symfony](/doc/Symfony.md)
 
 ## Contributors
 Please take a look at the CONTRIBUTOR-README.md File.

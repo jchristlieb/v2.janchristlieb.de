@@ -27,26 +27,22 @@ class NameFilterIterator extends RecursiveFilterIterator
      * @var int
      */
     protected $filterMin;
+
     /**
      * @var int
      */
     protected $filterMax;
 
     /**
-     * @param RecursiveIterator $iterator
-     * @param string            $filter
-     *
      * @throws \Exception
      */
-    public function __construct(RecursiveIterator $iterator, $filter)
+    public function __construct(RecursiveIterator $iterator, string $filter)
     {
         parent::__construct($iterator);
+
         $this->setFilter($filter);
     }
 
-    /**
-     * @return bool
-     */
     public function accept(): bool
     {
         $test = $this->getInnerIterator()->current();
@@ -78,11 +74,9 @@ class NameFilterIterator extends RecursiveFilterIterator
     }
 
     /**
-     * @param string $filter
-     *
      * @throws \Exception
      */
-    protected function setFilter($filter): void
+    protected function setFilter(string $filter): void
     {
         if (RegularExpression::safeMatch($filter, '') === false) {
             // Handles:

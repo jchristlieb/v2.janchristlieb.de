@@ -4,8 +4,8 @@
 @section('intro')
     <div class="row">
         <div class="intro">
-            <h1 class="display-4 mb-4">Projects</h1>
-            <p class="lead">Get an idea of the products I build and the underlying technologies.</p>
+            <h1 class="display-4">Projects</h1>
+            <p class="lead mt-2">Get an idea of the products I build and the tools I use.</p>
         </div>
     </div>
 @endsection
@@ -32,12 +32,12 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">{{ $project->title }}</h5>
-                                <p class="card-text">{{ \Illuminate\Support\Str::words($project->description, 20, ' [...]') }}</p>
+                                <h5 class="card-title">{{ $project->name }}</h5>
+                                <p class="card-text">{!! \Illuminate\Support\Str::words($project->description, 20, ' [...]') !!}</p>
                             </div>
                             <div class="card-footer">
                                 @foreach($project->tags as $tag)
-                                    <span class="badge badge-primary">{{ $tag->name }}</span>
+                                    <span class="badge badge-primary p-2 mr-2">{{ $tag->name }}</span>
                                 @endforeach
                             </div>
                         </a>

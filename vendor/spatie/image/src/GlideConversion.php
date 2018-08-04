@@ -101,9 +101,10 @@ final class GlideConversion
         $conversionResultDirectory = pathinfo($this->conversionResult, PATHINFO_DIRNAME);
 
         copy($this->conversionResult, $outputFile);
+
         unlink($this->conversionResult);
 
-        if ($this->directoryIsEmpty($conversionResultDirectory)) {
+        if ($this->directoryIsEmpty($conversionResultDirectory) && $conversionResultDirectory !== '/tmp') {
             rmdir($conversionResultDirectory);
         }
     }
@@ -131,6 +132,7 @@ final class GlideConversion
             'crop' => 'fit',
             'manualCrop' => 'crop',
             'orientation' => 'or',
+            'flip' => 'flip',
             'fit' => 'fit',
             'devicePixelRatio' => 'dpr',
             'brightness' => 'bri',

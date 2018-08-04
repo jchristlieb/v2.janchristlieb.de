@@ -2,6 +2,78 @@
 
 All notable changes to `laravel-medialibrary` will be documented in this file
 
+## 7.3.10 - 2018-06-16
+
+- Fix for multiple files with the same filename in one ZIP archive
+- Fix `markAsConversionGenerated`: disable model events when saving extra properties in Media::updated event
+
+## 7.3.9 - 2018-06-16 
+
+**do not use - broken**
+
+- fix `markAsConversionGenerated`
+
+## 7.3.8 - 2018-05-15
+
+- fix `ids` option of `RegenerateCommand`
+
+## 7.3.7 - 2018-05-15
+
+- bugfix around responsive images
+
+## 7.3.6 - 2018-05-15
+
+- add support from `webp`
+
+## 7.3.5 - 2018-05-08
+
+- fix bug where `addMediaFromUrl` would not work if the file contained a space
+
+## 7.3.4 - 2018-05-07
+
+- Proper check and tests on forced deletion with soft delete models.
+
+## 7.3.3 - 2018-05-04
+
+- Add dev dependency on pdo SQLite to prevent confusing errors.
+
+## 7.3.2 - 2018-05-04
+
+- Fix #1076
+
+## 7.3.1 - 2018-05-02
+
+- Fix custom properties not saved on copy (#1073)
+
+## 7.3.0 - 2018-04-30
+
+- Add `hasGeneratedConversion`
+
+## 7.1.8 - 2018-04-06
+
+- avoid removing the file when the model uses `SoftDeletes`
+
+## 7.1.7 - 2018-04-24
+
+- improve checking applied traits on the Media model
+
+## 7.1.6 - 2018-04-16
+
+- Fix `ffprobe` path
+
+## 7.1.5 - 2018-04-13
+
+- Always use the correct image driver.
+
+## 7.1.4 - 2018-04-13
+
+- ease `maennchen/zipstream-php` requirements
+
+## 7.1.3 - 2018-03-30
+
+- Fix for renaming files when not all conversions are present
+- Fix bugs when working with remote filesystems
+
 ## 7.1.2 - 2018-03-22
 
 - Fix a typo in `medialibrary.disk_name`.

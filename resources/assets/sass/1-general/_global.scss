@@ -12,6 +12,10 @@ body {
   background-color: $main-col;
 }
 
+.bg__highlight-col {
+  background-color: $highlight-col;
+}
+
 .container {
   max-width: 800px !important;
 }
@@ -20,7 +24,8 @@ body {
   @extend .jumbotron;
   background-color: $main-col-darker;
   width: 800px;
-  padding: 1.7rem;
+  padding: 1.7rem 2.3rem;
+  margin-bottom: 1.5rem;
 }
 
 // make user menu in line with master layout
@@ -31,4 +36,14 @@ body {
 
 .mt-50 {
   margin-top: 50px;
+}
+
+.alert-info {
+  background-color: $highlight-col;
+  border-color: $highlight-col;
+  color: $text-col-lighter;
+  p, ul, ol, li {
+    font-size: 1.125rem;
+    font-weight: 300;
+  }
 }

@@ -1,7 +1,6 @@
 .section_project {
 
   .card {
-    border: 1px solid #adadad;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   }
 
@@ -16,7 +15,14 @@
 
   .card-footer {
     border: none;
-    background-color: rgba(0, 0, 0, 0.125);
+    background-color: $main-col-darker;
   }
 
+}
+
+.section_project_single {
+  p {
+    font-size: 1.125rem;
+    font-weight: 300;
+  }
 }

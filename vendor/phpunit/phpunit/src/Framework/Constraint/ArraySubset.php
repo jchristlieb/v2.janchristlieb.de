@@ -21,25 +21,21 @@ use SebastianBergmann\Comparator\ComparisonFailure;
 class ArraySubset extends Constraint
 {
     /**
-     * @var array|\Traversable
+     * @var iterable
      */
     private $subset;
 
     /**
      * @var bool
      */
-    private $strict;
+    private $checkForObjectIdentity;
 
-    /**
-     * @param array|\Traversable $subset
-     * @param bool               $strict Check for object identity
-     */
-    public function __construct($subset, $strict = false)
+    public function __construct(iterable $subset, bool $checkForObjectIdentity = false)
     {
         parent::__construct();
 
-        $this->strict = $strict;
-        $this->subset = $subset;
+        $this->checkForObjectIdentity = $checkForObjectIdentity;
+        $this->subset                 = $subset;
     }
 
     /**
@@ -58,8 +54,6 @@ class ArraySubset extends Constraint
      *
      * @throws ExpectationFailedException
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     *
-     * @return mixed
      */
     public function evaluate($other, $description = '', $returnResult = false)
     {
@@ -70,7 +64,7 @@ class ArraySubset extends Constraint
 
         $patched = \array_replace_recursive($other, $this->subset);
 
-        if ($this->strict) {
+        if ($this->checkForObjectIdentity) {
             $result = $other === $patched;
         } else {
             $result = $other == $patched;
@@ -96,8 +90,6 @@ class ArraySubset extends Constraint
      * Returns a string representation of the constraint.
      *
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     *
-     * @return string
      */
     public function toString(): string
     {
@@ -113,20 +105,13 @@ class ArraySubset extends Constraint
      * @param mixed $other evaluated value or object
      *
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     *
-     * @return string
      */
     protected function failureDescription($other): string
     {
         return 'an array ' . $this->toString();
     }
 
-    /**
-     * @param array|\Traversable $other
-     *
-     * @return array
-     */
-    private function toArray($other): array
+    private function toArray(iterable $other): array
     {
         if (\is_array($other)) {
             return $other;

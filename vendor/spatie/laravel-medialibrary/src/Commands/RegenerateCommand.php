@@ -53,7 +53,9 @@ class RegenerateCommand extends Command
         $mediaFiles->each(function (Media $media) use ($progressBar) {
             try {
                 $this->fileManipulator->createDerivedFiles(
-                    $media, array_wrap($this->option('only')), $this->option('only-missing')
+                    $media,
+                    array_wrap($this->option('only')),
+                    $this->option('only-missing')
                 );
             } catch (Exception $exception) {
                 $this->errorMessages[$media->id] = $exception->getMessage();
@@ -78,20 +80,31 @@ class RegenerateCommand extends Command
     public function getMediaToBeRegenerated(): Collection
     {
         $modelType = $this->argument('modelType') ?? '';
-        $mediaIds = $this->option('ids');
+        $mediaIds = $this->getMediaIds();
 
-        if ($modelType === '' && ! $mediaIds) {
+        if ($modelType === '' && count($mediaIds) === 0) {
             return $this->mediaRepository->all();
         }
 
-        if ($mediaIds) {
-            if (! is_array($mediaIds)) {
-                $mediaIds = explode(',', $mediaIds);
-            }
-
-            return $this->mediaRepository->getByIds($mediaIds);
+        if (! count($mediaIds)) {
+            return $this->mediaRepository->getByModelType($modelType);
         }
 
-        return $this->mediaRepository->getByModelType($modelType);
+        return $this->mediaRepository->getByIds($mediaIds);
+    }
+
+    protected function getMediaIds(): array
+    {
+        $mediaIds = $this->option('ids');
+
+        if (! is_array($mediaIds)) {
+            $mediaIds = explode(',', $mediaIds);
+        }
+
+        if (count($mediaIds) === 1 && str_contains($mediaIds[0], ',')) {
+            $mediaIds = explode(',', $mediaIds[0]);
+        }
+
+        return $mediaIds;
     }
 }

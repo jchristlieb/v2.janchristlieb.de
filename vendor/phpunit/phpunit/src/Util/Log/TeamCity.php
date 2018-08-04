@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace PHPUnit\Util\Log;
 
 use PHPUnit\Framework\AssertionFailedError;
@@ -45,9 +44,6 @@ class TeamCity extends ResultPrinter
      */
     private $flowId;
 
-    /**
-     * @param TestResult $result
-     */
     public function printResult(TestResult $result): void
     {
         $this->printHeader();
@@ -56,10 +52,6 @@ class TeamCity extends ResultPrinter
 
     /**
      * An error occurred.
-     *
-     * @param Test       $test
-     * @param \Throwable $t
-     * @param float      $time
      *
      * @throws \InvalidArgumentException
      */
@@ -78,10 +70,6 @@ class TeamCity extends ResultPrinter
     /**
      * A warning occurred.
      *
-     * @param Test    $test
-     * @param Warning $e
-     * @param float   $time
-     *
      * @throws \InvalidArgumentException
      */
     public function addWarning(Test $test, Warning $e, float $time): void
@@ -98,10 +86,6 @@ class TeamCity extends ResultPrinter
 
     /**
      * A failure occurred.
-     *
-     * @param Test                 $test
-     * @param AssertionFailedError $e
-     * @param float                $time
      *
      * @throws \InvalidArgumentException
      */
@@ -142,10 +126,6 @@ class TeamCity extends ResultPrinter
 
     /**
      * Incomplete test.
-     *
-     * @param Test       $test
-     * @param \Throwable $t
-     * @param float      $time
      */
     public function addIncompleteTest(Test $test, \Throwable $t, float $time): void
     {
@@ -154,10 +134,6 @@ class TeamCity extends ResultPrinter
 
     /**
      * Risky test.
-     *
-     * @param Test       $test
-     * @param \Throwable $t
-     * @param float      $time
      *
      * @throws \InvalidArgumentException
      */
@@ -168,10 +144,6 @@ class TeamCity extends ResultPrinter
 
     /**
      * Skipped test.
-     *
-     * @param Test       $test
-     * @param \Throwable $t
-     * @param float      $time
      *
      * @throws \ReflectionException
      */
@@ -202,8 +174,6 @@ class TeamCity extends ResultPrinter
 
     /**
      * A testsuite started.
-     *
-     * @param TestSuite $suite
      *
      * @throws \ReflectionException
      */
@@ -250,8 +220,6 @@ class TeamCity extends ResultPrinter
 
     /**
      * A testsuite ended.
-     *
-     * @param TestSuite $suite
      */
     public function endTestSuite(TestSuite $suite): void
     {
@@ -277,8 +245,6 @@ class TeamCity extends ResultPrinter
     /**
      * A test started.
      *
-     * @param Test $test
-     *
      * @throws \ReflectionException
      */
     public function startTest(Test $test): void
@@ -298,9 +264,6 @@ class TeamCity extends ResultPrinter
 
     /**
      * A test ended.
-     *
-     * @param Test  $test
-     * @param float $time
      */
     public function endTest(Test $test, float $time): void
     {
@@ -315,10 +278,7 @@ class TeamCity extends ResultPrinter
         );
     }
 
-    /**
-     * @param string $progress
-     */
-    protected function writeProgress($progress): void
+    protected function writeProgress(string $progress): void
     {
     }
 
@@ -342,11 +302,6 @@ class TeamCity extends ResultPrinter
         $this->write("]\n");
     }
 
-    /**
-     * @param \Throwable $t
-     *
-     * @return string
-     */
     private static function getMessage(\Throwable $t): string
     {
         $message = '';
@@ -365,11 +320,7 @@ class TeamCity extends ResultPrinter
     }
 
     /**
-     * @param \Throwable $t
-     *
      * @throws \InvalidArgumentException
-     *
-     * @return string
      */
     private static function getDetails(\Throwable $t): string
     {
@@ -388,11 +339,6 @@ class TeamCity extends ResultPrinter
         return ' ' . \str_replace("\n", "\n ", $stackTrace);
     }
 
-    /**
-     * @param mixed $value
-     *
-     * @return string
-     */
     private static function getPrimitiveValueAsString($value): ?string
     {
         if ($value === null) {
@@ -410,11 +356,6 @@ class TeamCity extends ResultPrinter
         return null;
     }
 
-    /**
-     * @param string $text
-     *
-     * @return string
-     */
     private static function escapeValue(string $text): string
     {
         return \str_replace(
@@ -428,8 +369,6 @@ class TeamCity extends ResultPrinter
      * @param string $className
      *
      * @throws \ReflectionException
-     *
-     * @return string
      */
     private static function getFileName($className): string
     {

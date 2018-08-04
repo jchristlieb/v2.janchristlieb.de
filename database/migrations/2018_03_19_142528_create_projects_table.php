@@ -18,7 +18,9 @@ class CreateProjectsTable extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('title');
+            $table->string('subtitle');
             $table->text('description');
+            $table->text('techstack');
             $table->date('date');
             $table->string('client')->nullable();
             $table->string('link');

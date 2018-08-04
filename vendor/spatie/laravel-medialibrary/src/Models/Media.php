@@ -18,7 +18,6 @@ use Spatie\MediaLibrary\Helpers\TemporaryDirectory;
 use Spatie\MediaLibrary\Conversion\ConversionCollection;
 use Spatie\MediaLibrary\ImageGenerators\FileTypes\Image;
 use Spatie\MediaLibrary\UrlGenerator\UrlGeneratorFactory;
-use Spatie\MediaLibrary\ResponsiveImages\ResponsiveImages;
 use Spatie\MediaLibrary\Models\Traits\CustomMediaProperties;
 use Spatie\MediaLibrary\ResponsiveImages\RegisteredResponsiveImages;
 
@@ -195,6 +194,27 @@ class Media extends Model implements Responsable, Htmlable
         })->toArray();
     }
 
+    public function hasGeneratedConversion(string $conversionName): bool
+    {
+        $generatedConversions = $this->getGeneratedConversions();
+
+        return $generatedConversions[$conversionName] ?? false;
+    }
+
+    public function markAsConversionGenerated(string $conversionName, bool $generated): self
+    {
+        $this->setCustomProperty("generated_conversions.{$conversionName}", $generated);
+
+        $this->save();
+        
+        return $this;
+    }
+
+    public function getGeneratedConversions(): Collection
+    {
+        return collect($this->getCustomProperty('generated_conversions', []));
+    }
+
     /**
      * Create an HTTP response that represents the object.
      *
@@ -230,7 +250,7 @@ class Media extends Model implements Responsable, Htmlable
 
     public function hasResponsiveImages(string $conversionName = ''): bool
     {
-        return count($this->getResponsiveImageUrls($conversionName));
+        return count($this->getResponsiveImageUrls($conversionName)) > 0;
     }
 
     public function getSrcset(string $conversionName = ''): string
@@ -316,9 +336,8 @@ class Media extends Model implements Responsable, Htmlable
         $newMedia = $model
             ->addMedia($temporaryFile)
             ->usingName($this->name)
+            ->withCustomProperties($this->custom_properties)
             ->toMediaCollection($collectionName);
-
-        $newMedia->custom_properties = $this->custom_properties;
 
         $temporaryDirectory->delete();
 
