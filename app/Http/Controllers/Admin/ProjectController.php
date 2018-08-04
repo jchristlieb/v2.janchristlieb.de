@@ -81,8 +81,7 @@ class ProjectController extends Controller
                 ->toMediaCollection($project->slug);
         }
 
-        // redirect to the dashboard
-        return view('admin.dashboard');
+        return redirect(route('admin.projects.edit', $project->id));
     }
 
     /**
@@ -106,8 +105,10 @@ class ProjectController extends Controller
     {
         // query data for requested project
         $project = Project::findOrFail($id);
+        $images = $project->getMedia($project->slug);
+        $tags = Tag::all();
 
-        return view('admin.projects.edit', compact('project'));
+        return view('admin.projects.edit', compact('project', 'images', 'tags'));
     }
 
     /**
@@ -139,8 +140,31 @@ class ProjectController extends Controller
 
         $project->update($validatedData);
 
+        //dd($request->images);
+        //dd($request->images);
 
-        return view('admin.dashboard');
+        if ($request->input('tags') != []) {
+            // retrieve the selected tags ID
+            $tags = $request->input('tags');
+
+            // link the $tags to the $project
+            $project->tags()->attach($tags);
+        }
+
+        if ($request->images != []) {
+
+            // associate images to the project
+            foreach ($request->images as $image) {
+            $project
+                ->addMedia($image)
+                ->withResponsiveImages()
+                ->toMediaCollection($project->slug);
+        }
+    };
+
+
+        return redirect(route('admin.projects.edit', $project->id));
+
 
     }
 
@@ -157,6 +181,15 @@ class ProjectController extends Controller
         Project::destroy($id);
 
         return view('admin.dashboard');
+
+    }
+
+    public function deletetag($projectId, $tagId) {
+
+        $project = Project::findOrFail($projectId);
+        $project->tags()->detach($tagId);
+
+        return redirect(route('admin.projects.edit', $projectId));
 
     }
 }
