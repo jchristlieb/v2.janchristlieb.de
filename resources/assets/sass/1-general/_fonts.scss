@@ -26,7 +26,7 @@ h1, h2, h3 {
   color: $text-col;
 }
 
-p, a, h4, h5, h6 {
+p, a, h4, h5, h6, ol, ul, li {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
@@ -68,4 +68,15 @@ a.color {
 
 .highlight {
   color: $highlight-col;
+}
+
+small, .small {
+  font-size: 50%;
+}
+
+.section_project_single {
+  p, ul, ol, li {
+    font-size: 1.125rem;
+    font-weight: 300;
+  }
 }
