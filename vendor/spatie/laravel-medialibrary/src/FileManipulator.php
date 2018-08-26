@@ -89,7 +89,7 @@ class FileManipulator
                 return $onlyIfMissing && Storage::disk($media->disk)->exists($relativePath);
             })
             ->each(function (Conversion $conversion) use ($media, $imageGenerator, $copiedOriginalFile) {
-                event(new ConversionWillStart($media, $conversion));
+                event(new ConversionWillStart($media, $conversion, $copiedOriginalFile));
 
                 $copiedOriginalFile = $imageGenerator->convert($copiedOriginalFile, $conversion);
 
@@ -142,7 +142,9 @@ class FileManipulator
 
     protected function dispatchQueuedConversions(Media $media, ConversionCollection $queuedConversions)
     {
-        $job = new PerformConversions($queuedConversions, $media);
+        $performConversionsJobClass = config('medialibrary.jobs.perform_conversions', PerformConversions::class);
+
+        $job = new $performConversionsJobClass($queuedConversions, $media);
 
         if ($customQueue = config('medialibrary.queue_name')) {
             $job->onQueue($customQueue);
